@@ -1,0 +1,1453 @@
+/* =========================================================
+   VERIFY.EDU.PG — STUDENT DASHBOARD
+   ========================================================= */
+
+
+.student-dashboard {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    background:
+        radial-gradient(
+            circle at 0% 0%,
+            rgba(23, 63, 143, 0.06),
+            transparent 28%
+        ),
+        #f5f8fc;
+
+    color: #172033;
+
+    font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.dashboard-header {
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e5ebf3;
+
+}
+
+
+.dashboard-header-inner {
+
+    max-width: 1280px;
+
+    margin: 0 auto;
+
+    padding: 18px 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+}
+
+
+.dashboard-brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+}
+
+
+.dashboard-logo {
+
+    width: 43px;
+
+    height: 43px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #173f8f;
+
+    color: #ffffff;
+
+    font-size: 21px;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 7px 18px rgba(23, 63, 143, 0.18);
+
+}
+
+
+.dashboard-platform {
+
+    color: #173f8f;
+
+    font-size: 19px;
+
+    font-weight: 800;
+
+    letter-spacing: -0.3px;
+
+}
+
+
+.dashboard-tagline {
+
+    margin-top: 2px;
+
+    color: #7d899a;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+}
+
+
+.dashboard-header-right {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+}
+
+
+.student-account {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+}
+
+
+.student-account span {
+
+    color: #9aa4b3;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+}
+
+
+.student-account strong {
+
+    max-width: 220px;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    margin-top: 2px;
+
+    color: #334057;
+
+    font-size: 13px;
+
+}
+
+
+.logout-button {
+
+    padding: 10px 17px;
+
+    border: 1px solid #e1e6ee;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #4b596e;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background .2s ease,
+        border-color .2s ease,
+        color .2s ease;
+
+}
+
+
+.logout-button:hover {
+
+    border-color: #cbd6e5;
+
+    background: #f7f9fc;
+
+    color: #173f8f;
+
+}
+
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+.dashboard-main {
+
+    flex: 1;
+
+    padding: 45px 40px 60px;
+
+}
+
+
+.dashboard-container {
+
+    width: 100%;
+
+    max-width: 1120px;
+
+    margin: 0 auto;
+
+}
+
+
+/* =========================================================
+   WELCOME BANNER
+   ========================================================= */
+
+.welcome-banner {
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 30px;
+
+    padding: 34px 38px;
+
+    margin-bottom: 22px;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #173f8f,
+            #285ba9
+        );
+
+    color: #ffffff;
+
+    box-shadow:
+        0 16px 35px rgba(23, 63, 143, 0.18);
+
+}
+
+
+.welcome-banner::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+
+    height: 260px;
+
+    right: -80px;
+
+    top: -130px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.07);
+
+}
+
+
+.dashboard-eyebrow {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #e6c66d;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.6px;
+
+}
+
+
+.welcome-banner h1 {
+
+    position: relative;
+
+    z-index: 1;
+
+    margin: 0;
+
+    font-size: 30px;
+
+    line-height: 1.2;
+
+    letter-spacing: -0.8px;
+
+}
+
+
+.welcome-banner p {
+
+    position: relative;
+
+    z-index: 1;
+
+    margin: 9px 0 0;
+
+    color: rgba(255,255,255,.75);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+}
+
+
+.welcome-status {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    min-width: 185px;
+
+    padding: 14px 17px;
+
+    border: 1px solid rgba(255,255,255,.15);
+
+    border-radius: 14px;
+
+    background: rgba(255,255,255,.09);
+
+    backdrop-filter: blur(8px);
+
+}
+
+
+.status-check {
+
+    width: 34px;
+
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.16);
+
+    color: #ffffff;
+
+    font-weight: 800;
+
+}
+
+
+.welcome-status span {
+
+    display: block;
+
+    color: rgba(255,255,255,.55);
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: .8px;
+
+}
+
+
+.welcome-status strong {
+
+    display: block;
+
+    margin-top: 3px;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================================
+   STATS
+   ========================================================= */
+
+.dashboard-stats {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 22px;
+
+}
+
+
+.stat-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    min-width: 0;
+
+    padding: 21px;
+
+    border: 1px solid #e4eaf2;
+
+    border-radius: 17px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 7px 20px rgba(27, 45, 70, 0.04);
+
+}
+
+
+.stat-icon {
+
+    flex: 0 0 42px;
+
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #edf3ff;
+
+    font-size: 18px;
+
+}
+
+
+.stat-card span {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #8994a5;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: .6px;
+
+}
+
+
+.stat-card strong {
+
+    display: block;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    color: #29364c;
+
+    font-size: 13px;
+
+    line-height: 1.35;
+
+}
+
+
+.text-valid {
+
+    color: #16824a !important;
+
+}
+
+
+.text-revoked {
+
+    color: #c62828 !important;
+
+}
+
+
+/* =========================================================
+   CERTIFICATE SECTION
+   ========================================================= */
+
+.certificate-section {
+
+    padding: 32px;
+
+    border: 1px solid #e3e9f1;
+
+    border-radius: 22px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 10px 28px rgba(27, 45, 70, 0.05);
+
+}
+
+
+.section-heading {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.section-heading > div:first-child > span {
+
+    color: #a18031;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.4px;
+
+}
+
+
+.section-heading h2 {
+
+    margin: 5px 0 0;
+
+    color: #1d2a40;
+
+    font-size: 22px;
+
+    letter-spacing: -.4px;
+
+}
+
+
+.large-status {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 9px 13px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+}
+
+
+.large-status.valid {
+
+    background: #edf9f2;
+
+    color: #16824a;
+
+}
+
+
+.large-status.revoked {
+
+    background: #fff1f1;
+
+    color: #c62828;
+
+}
+
+
+.status-dot {
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: currentColor;
+
+}
+
+
+/* =========================================================
+   DETAILS GRID
+   ========================================================= */
+
+.certificate-details-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 14px;
+
+}
+
+
+.detail-card {
+
+    min-width: 0;
+
+    padding: 17px 18px;
+
+    border: 1px solid #e9edf3;
+
+    border-radius: 13px;
+
+    background: #fafbfd;
+
+}
+
+
+.detail-label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #8a96a7;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+}
+
+
+.detail-value {
+
+    display: block;
+
+    overflow-wrap: anywhere;
+
+    color: #2a374c;
+
+    font-size: 13px;
+
+    line-height: 1.45;
+
+}
+
+
+.certificate-id-value {
+
+    color: #173f8f;
+
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        monospace;
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================================
+   HASH
+   ========================================================= */
+
+.hash-section {
+
+    margin-top: 15px;
+
+    padding: 18px;
+
+    border: 1px solid #e2e8f1;
+
+    border-radius: 14px;
+
+    background: #f8fafd;
+
+}
+
+
+.hash-heading {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    margin-bottom: 13px;
+
+}
+
+
+.hash-heading > span {
+
+    font-size: 15px;
+
+}
+
+
+.hash-heading strong {
+
+    display: block;
+
+    color: #344158;
+
+    font-size: 11px;
+
+}
+
+
+.hash-heading p {
+
+    margin: 3px 0 0;
+
+    color: #8b96a6;
+
+    font-size: 10px;
+
+}
+
+
+.hash-value {
+
+    overflow-wrap: anywhere;
+
+    padding: 12px 14px;
+
+    border: 1px solid #e1e7ef;
+
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    color: #59677b;
+
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        monospace;
+
+    font-size: 10px;
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================================================
+   ACTIONS
+   ========================================================= */
+
+.dashboard-actions-section {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 25px;
+
+    margin-top: 22px;
+
+    padding: 25px 28px;
+
+    border: 1px solid #e3e9f1;
+
+    border-radius: 18px;
+
+    background: #ffffff;
+
+}
+
+
+.dashboard-actions-section h3 {
+
+    margin: 0 0 5px;
+
+    color: #26344a;
+
+    font-size: 15px;
+
+}
+
+
+.dashboard-actions-section p {
+
+    margin: 0;
+
+    color: #8792a3;
+
+    font-size: 11px;
+
+}
+
+
+.dashboard-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-shrink: 0;
+
+}
+
+
+.primary-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    min-height: 43px;
+
+    padding: 0 18px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #173f8f;
+
+    color: #ffffff;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 7px 18px rgba(23, 63, 143, .17);
+
+    transition:
+        background .2s ease,
+        transform .2s ease;
+
+}
+
+
+.primary-button:hover {
+
+    background: #123577;
+
+    transform: translateY(-1px);
+
+}
+
+
+.secondary-button {
+
+    min-height: 43px;
+
+    padding: 0 18px;
+
+    border: 1px solid #dce3ec;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #536075;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+}
+
+
+.secondary-button:hover {
+
+    background: #f7f9fc;
+
+    border-color: #cbd5e1;
+
+}
+
+
+/* =========================================================
+   REVOKED NOTICE
+   ========================================================= */
+
+.revoked-notice {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 13px;
+
+    margin-top: 20px;
+
+    padding: 17px;
+
+    border: 1px solid #fecaca;
+
+    border-radius: 14px;
+
+    background: #fff6f6;
+
+}
+
+
+.revoked-icon {
+
+    flex: 0 0 27px;
+
+    width: 27px;
+
+    height: 27px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #dc2626;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+}
+
+
+.revoked-notice strong {
+
+    color: #b42318;
+
+    font-size: 13px;
+
+}
+
+
+.revoked-notice p {
+
+    margin: 4px 0 0;
+
+    color: #8d5252;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.dashboard-footer {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 20px 40px;
+
+    border-top: 1px solid #e4eaf2;
+
+    background: #ffffff;
+
+    color: #8b96a6;
+
+    font-size: 10px;
+
+}
+
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.dashboard-loading {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #f5f8fc;
+
+    color: #26344a;
+
+    font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        sans-serif;
+
+}
+
+
+.loading-spinner {
+
+    width: 38px;
+
+    height: 38px;
+
+    margin-bottom: 20px;
+
+    border: 3px solid #dce5f3;
+
+    border-top-color: #173f8f;
+
+    border-radius: 50%;
+
+    animation:
+        dashboardSpin .8s linear infinite;
+
+}
+
+
+@keyframes dashboardSpin {
+
+    to {
+
+        transform: rotate(360deg);
+
+    }
+
+}
+
+
+.dashboard-loading h2 {
+
+    margin: 0;
+
+    font-size: 19px;
+
+}
+
+
+.dashboard-loading p {
+
+    margin: 7px 0 0;
+
+    color: #8a95a5;
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================================
+   ERROR PAGE
+   ========================================================= */
+
+.dashboard-error-page {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px;
+
+    background: #f5f8fc;
+
+    font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        sans-serif;
+
+}
+
+
+.dashboard-error-card {
+
+    width: 100%;
+
+    max-width: 480px;
+
+    padding: 35px;
+
+    text-align: center;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 20px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 15px 40px rgba(27, 45, 70, .08);
+
+}
+
+
+.error-card-icon {
+
+    width: 48px;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin: 0 auto 18px;
+
+    border-radius: 50%;
+
+    background: #fff1f1;
+
+    color: #dc2626;
+
+    font-weight: 800;
+
+}
+
+
+.dashboard-error-card h2 {
+
+    margin: 0;
+
+    color: #26344a;
+
+    font-size: 21px;
+
+}
+
+
+.dashboard-error-card > p {
+
+    margin: 10px 0 20px;
+
+    color: #7e899a;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+}
+
+
+.error-certificate-id {
+
+    padding: 14px;
+
+    border-radius: 11px;
+
+    background: #f7f9fc;
+
+}
+
+
+.error-certificate-id span {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #8b96a6;
+
+    font-size: 10px;
+
+}
+
+
+.error-certificate-id strong {
+
+    color: #173f8f;
+
+    font-family:
+        ui-monospace,
+        monospace;
+
+    font-size: 12px;
+
+}
+
+
+.error-help {
+
+    font-size: 11px !important;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .dashboard-header-inner {
+
+        padding: 18px 25px;
+
+    }
+
+
+    .dashboard-main {
+
+        padding: 30px 25px 45px;
+
+    }
+
+
+    .dashboard-stats {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .welcome-banner {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+    }
+
+
+    .welcome-status {
+
+        width: 100%;
+
+        box-sizing: border-box;
+
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .dashboard-header-inner {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    .dashboard-header-right {
+
+        width: 100%;
+
+        justify-content: space-between;
+
+    }
+
+
+    .student-account {
+
+        align-items: flex-start;
+
+    }
+
+
+    .dashboard-main {
+
+        padding: 22px 15px 35px;
+
+    }
+
+
+    .welcome-banner {
+
+        padding: 27px 23px;
+
+        border-radius: 18px;
+
+    }
+
+
+    .welcome-banner h1 {
+
+        font-size: 25px;
+
+    }
+
+
+    .certificate-section {
+
+        padding: 22px 18px;
+
+        border-radius: 18px;
+
+    }
+
+
+    .section-heading {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+    }
+
+
+    .certificate-details-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .dashboard-actions-section {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        padding: 22px;
+
+    }
+
+
+    .dashboard-actions {
+
+        width: 100%;
+
+        flex-direction: column;
+
+    }
+
+
+    .primary-button,
+    .secondary-button {
+
+        width: 100%;
+
+    }
+
+
+    .dashboard-footer {
+
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 18px 20px;
+
+    }
+
+}

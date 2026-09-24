@@ -1,0 +1,1972 @@
+/* =========================================================
+   VERIFY.EDU.PG — PNGUoT INSTITUTION PORTAL
+   CLEAN MODERN STYLESHEET
+   ========================================================= */
+
+/* =========================================================
+   ROOT / RESET
+   ========================================================= */
+
+:root {
+  --primary: #6b1734;
+  --primary-dark: #4f1026;
+  --primary-light: #8b2a4b;
+
+  --gold: #c99a2e;
+  --gold-light: #f4e7bf;
+
+  --text: #20242a;
+  --text-secondary: #626a73;
+  --text-muted: #8a929b;
+
+  --background: #f5f7fa;
+  --surface: #ffffff;
+  --surface-soft: #fafbfc;
+
+  --border: #e5e8ec;
+  --border-dark: #d6dbe1;
+
+  --success: #237a45;
+  --success-bg: #eaf6ef;
+
+  --danger: #a5294d;
+  --danger-bg: #faedf1;
+
+  --warning: #80621d;
+  --warning-bg: #fff8e6;
+
+  --shadow-sm:
+    0 2px 8px rgba(20, 25, 30, 0.04);
+
+  --shadow:
+    0 8px 25px rgba(20, 25, 30, 0.07);
+
+  --shadow-lg:
+    0 18px 45px rgba(20, 25, 30, 0.10);
+
+  --radius-sm: 10px;
+  --radius: 16px;
+  --radius-lg: 22px;
+
+  --transition: 0.2s ease;
+}
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+button {
+  outline: none;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid rgba(107, 23, 52, 0.15);
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   MAIN PORTAL
+   ========================================================= */
+
+.institution-portal {
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(107, 23, 52, 0.045),
+      transparent 35%
+    ),
+    linear-gradient(
+      180deg,
+      #f8fafc 0%,
+      #f1f4f8 100%
+    );
+
+  color: var(--text);
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.institution-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  width: 100%;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border-bottom: 1px solid rgba(220, 224, 229, 0.85);
+
+  box-shadow:
+    0 3px 18px rgba(20, 25, 30, 0.045);
+}
+
+.institution-header-inner {
+  width: min(1400px, calc(100% - 64px));
+
+  min-height: 84px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.institution-brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  min-width: 0;
+}
+
+.institution-logo-wrapper {
+  width: 54px;
+  height: 54px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+
+  border-radius: 12px;
+
+  overflow: hidden;
+}
+
+.pnguot-logo {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  display: block;
+}
+
+.institution-brand-text {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  gap: 3px;
+}
+
+.platform-name {
+  display: block;
+
+  color: var(--primary);
+
+  font-size: 20px;
+  font-weight: 800;
+
+  line-height: 1.1;
+
+  letter-spacing: -0.4px;
+}
+
+.portal-name {
+  display: block;
+
+  color: var(--text-secondary);
+
+  font-size: 12px;
+  font-weight: 600;
+
+  letter-spacing: 0.1px;
+}
+
+/* =========================================================
+   INSTITUTION INFO
+   ========================================================= */
+
+.institution-info {
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-end;
+
+  gap: 3px;
+
+  text-align: right;
+}
+
+.institution-label {
+  color: var(--text-muted);
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.institution-info strong {
+  color: var(--primary);
+
+  font-size: 13px;
+  font-weight: 700;
+
+  line-height: 1.3;
+}
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+.institution-main {
+  width: min(1400px, calc(100% - 64px));
+
+  margin: 0 auto;
+
+  padding: 38px 0 70px;
+}
+
+/* =========================================================
+   HERO / INTRO
+   ========================================================= */
+
+.portal-intro {
+  position: relative;
+
+  overflow: hidden;
+
+  margin-bottom: 26px;
+
+  padding: 38px 42px;
+
+  border-radius: var(--radius-lg);
+
+  background:
+    linear-gradient(
+      135deg,
+      #5f1530 0%,
+      #6b1734 45%,
+      #872546 100%
+    );
+
+  color: #ffffff;
+
+  box-shadow:
+    0 18px 40px rgba(107, 23, 52, 0.18);
+}
+
+.portal-intro::before {
+  content: "";
+
+  position: absolute;
+
+  width: 280px;
+  height: 280px;
+
+  right: -80px;
+  top: -130px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.portal-intro::after {
+  content: "";
+
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  right: 90px;
+  bottom: -120px;
+
+  border-radius: 50%;
+
+  background: rgba(201, 154, 46, 0.10);
+}
+
+.portal-intro > div {
+  position: relative;
+  z-index: 2;
+
+  max-width: 760px;
+}
+
+.section-eyebrow {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: var(--primary);
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+}
+
+.portal-intro .section-eyebrow {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.portal-intro h1 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(30px, 4vw, 42px);
+
+  line-height: 1.12;
+
+  font-weight: 800;
+
+  letter-spacing: -1px;
+}
+
+.portal-intro p {
+  max-width: 650px;
+
+  margin: 13px 0 0;
+
+  color: rgba(255, 255, 255, 0.88);
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+/* =========================================================
+   OVERVIEW
+   ========================================================= */
+
+.overview-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
+
+  margin-bottom: 26px;
+}
+
+.overview-item {
+  position: relative;
+
+  min-height: 125px;
+
+  padding: 24px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius);
+
+  box-shadow: var(--shadow-sm);
+
+  overflow: hidden;
+
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+
+.overview-item::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 4px;
+  height: 100%;
+
+  background: var(--primary);
+}
+
+.overview-item:hover {
+  transform: translateY(-3px);
+
+  box-shadow: var(--shadow);
+}
+
+.overview-item span {
+  margin-bottom: 9px;
+
+  color: var(--text-secondary);
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.overview-item strong {
+  color: var(--text);
+
+  font-size: 32px;
+  font-weight: 800;
+
+  line-height: 1;
+}
+
+/* =========================================================
+   GENERAL CARD
+   ========================================================= */
+
+.portal-card {
+  width: 100%;
+
+  margin-bottom: 26px;
+
+  padding: 30px;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow);
+
+  transition:
+    box-shadow var(--transition),
+    transform var(--transition);
+}
+
+.portal-card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+/* =========================================================
+   CARD HEADER
+   ========================================================= */
+
+.card-header {
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 25px;
+
+  margin-bottom: 25px;
+}
+
+.card-header > div:first-child {
+  min-width: 0;
+}
+
+.portal-card h2 {
+  margin: 0;
+
+  color: var(--text);
+
+  font-size: 21px;
+  font-weight: 750;
+
+  line-height: 1.3;
+
+  letter-spacing: -0.35px;
+}
+
+.portal-card .card-header p {
+  margin: 8px 0 0;
+
+  color: var(--text-secondary);
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+/* =========================================================
+   ISSUE CERTIFICATE
+   ========================================================= */
+
+/*
+   This is the important section for your
+   "Issue New Certificate" alignment.
+*/
+
+.certificate-form {
+  width: 100%;
+
+  max-width: 900px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 18px 20px;
+}
+
+.certificate-form .form-group:last-child {
+  grid-column: 1 / -1;
+
+  max-width: calc(50% - 10px);
+}
+
+.form-group {
+  width: 100%;
+
+  margin: 0;
+}
+
+.form-group label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #3f464e;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.form-group input {
+  width: 100%;
+
+  min-height: 46px;
+
+  padding: 12px 14px;
+
+  color: var(--text);
+
+  background: #ffffff;
+
+  border: 1px solid var(--border-dark);
+
+  border-radius: 11px;
+
+  outline: none;
+
+  font-size: 13px;
+
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition),
+    background var(--transition);
+}
+
+.form-group input::placeholder {
+  color: #a0a7ae;
+
+  opacity: 1;
+}
+
+.form-group input:hover {
+  border-color: #c6ccd3;
+}
+
+.form-group input:focus {
+  border-color: var(--primary);
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 0 4px rgba(107, 23, 52, 0.09);
+}
+
+.form-actions {
+  width: 100%;
+
+  max-width: 900px;
+
+  margin: 22px auto 0;
+
+  display: flex;
+
+  justify-content: center;
+}
+
+.form-actions .primary-button {
+  width: auto;
+
+  min-width: 230px;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.primary-button,
+.secondary-button,
+.text-button,
+.action-button,
+.modal-close {
+  border: 0;
+
+  font-family: inherit;
+
+  cursor: pointer;
+
+  transition:
+    transform var(--transition),
+    background var(--transition),
+    box-shadow var(--transition),
+    opacity var(--transition);
+}
+
+.primary-button {
+  min-height: 44px;
+
+  padding: 12px 20px;
+
+  border-radius: 11px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--primary),
+      var(--primary-light)
+    );
+
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 750;
+
+  box-shadow:
+    0 7px 18px rgba(107, 23, 52, 0.18);
+}
+
+.primary-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 24px rgba(107, 23, 52, 0.24);
+}
+
+.primary-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.primary-button:disabled {
+  opacity: 0.55;
+
+  cursor: not-allowed;
+
+  box-shadow: none;
+}
+
+.secondary-button {
+  min-height: 40px;
+
+  padding: 10px 15px;
+
+  border-radius: 10px;
+
+  background: #f3f5f7;
+
+  color: #454c54;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.secondary-button:hover {
+  background: #e9ecef;
+
+  transform: translateY(-1px);
+}
+
+.text-button {
+  padding: 8px 10px;
+
+  background: transparent;
+
+  color: var(--primary);
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.text-button:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   BULK ISSUING
+   ========================================================= */
+
+.bulk-upload-content {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+/* =========================================================
+   CSV UPLOAD AREA
+   ========================================================= */
+
+.csv-upload-area {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 190px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 28px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #fcfdfe,
+      #f8fafb
+    );
+
+  border: 2px dashed #d5dae0;
+
+  border-radius: 16px;
+
+  transition:
+    border-color var(--transition),
+    background var(--transition);
+}
+
+.csv-upload-area:hover {
+  border-color: var(--primary);
+
+  background: #fdfbfc;
+}
+
+.csv-upload-area input {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  opacity: 0;
+
+  pointer-events: none;
+}
+
+.csv-upload-label {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  cursor: pointer;
+}
+
+.csv-upload-label::before {
+  content: "↑";
+
+  width: 54px;
+  height: 54px;
+
+  margin-bottom: 13px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--primary),
+      var(--primary-light)
+    );
+
+  color: #ffffff;
+
+  font-size: 25px;
+  font-weight: 600;
+
+  box-shadow:
+    0 8px 20px rgba(107, 23, 52, 0.16);
+}
+
+.csv-upload-label strong {
+  color: var(--text);
+
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.csv-upload-label span {
+  max-width: 420px;
+
+  margin-top: 6px;
+
+  color: var(--text-muted);
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+/* =========================================================
+   CSV FILE INFORMATION
+   ========================================================= */
+
+.csv-file-info {
+  width: 100%;
+
+  padding: 15px 17px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  background: #f7f9fb;
+
+  border: 1px solid var(--border);
+
+  border-radius: 12px;
+}
+
+.csv-file-info > div {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.csv-file-info strong {
+  color: var(--text);
+
+  font-size: 13px;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+.csv-file-info span {
+  color: var(--text-muted);
+
+  font-size: 11px;
+}
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.error-message {
+  width: 100%;
+
+  padding: 13px 15px;
+
+  background: var(--danger-bg);
+
+  border: 1px solid #f0ccd6;
+
+  border-radius: 10px;
+
+  color: var(--danger);
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+/* =========================================================
+   PREVIEW HEADER
+   ========================================================= */
+
+.preview-header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 13px;
+}
+
+.preview-header > div {
+  min-width: 0;
+}
+
+.preview-header h3 {
+  margin: 0;
+
+  color: var(--text);
+
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.preview-header span {
+  display: block;
+
+  margin-top: 4px;
+
+  color: var(--text-muted);
+
+  font-size: 11px;
+}
+
+/* =========================================================
+   CSV PREVIEW
+   ========================================================= */
+
+.csv-preview {
+  width: 100%;
+
+  padding-top: 4px;
+}
+
+.bulk-results {
+  width: 100%;
+
+  margin-top: 28px;
+
+  padding-top: 25px;
+
+  border-top: 1px solid var(--border);
+}
+
+/* =========================================================
+   TABLE WRAPPERS
+   ========================================================= */
+
+.table-wrapper,
+.certificate-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+
+  border: 1px solid var(--border);
+
+  border-radius: 13px;
+
+  background: #ffffff;
+}
+
+.table-wrapper::-webkit-scrollbar,
+.certificate-table-wrapper::-webkit-scrollbar {
+  height: 7px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb,
+.certificate-table-wrapper::-webkit-scrollbar-thumb {
+  background: #cdd2d8;
+
+  border-radius: 10px;
+}
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+table {
+  width: 100%;
+
+  min-width: 650px;
+
+  border-collapse: collapse;
+
+  background: #ffffff;
+}
+
+th {
+  padding: 13px 14px;
+
+  background: #f7f8fa;
+
+  border-bottom: 1px solid var(--border);
+
+  color: #69717a;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 0.5px;
+
+  text-align: left;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+}
+
+td {
+  padding: 14px;
+
+  border-bottom: 1px solid #edf0f2;
+
+  color: #4d555d;
+
+  font-size: 12px;
+
+  line-height: 1.4;
+
+  white-space: nowrap;
+}
+
+tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+tbody tr {
+  transition: background var(--transition);
+}
+
+tbody tr:hover {
+  background: #fafbfc;
+}
+
+tbody tr:hover td {
+  background: transparent;
+}
+
+/* =========================================================
+   STATUS BADGES
+   ========================================================= */
+
+.status-badge {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 62px;
+
+  padding: 5px 9px;
+
+  border-radius: 999px;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  line-height: 1;
+}
+
+.status-valid,
+.status-ready {
+  background: var(--success-bg);
+
+  color: var(--success);
+}
+
+.status-error,
+.status-revoked {
+  background: var(--danger-bg);
+
+  color: var(--danger);
+}
+
+/* =========================================================
+   BULK ACTIONS
+   ========================================================= */
+
+.bulk-actions {
+  width: 100%;
+
+  margin-top: 18px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.bulk-actions .primary-button {
+  width: auto;
+
+  min-width: 240px;
+}
+
+/* =========================================================
+   PROGRESS
+   ========================================================= */
+
+.progress-section {
+  width: 100%;
+
+  margin-top: 20px;
+
+  padding: 16px;
+
+  background: #fafbfc;
+
+  border: 1px solid var(--border);
+
+  border-radius: 12px;
+}
+
+.progress-label,
+.progress-header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 9px;
+
+  color: var(--text-secondary);
+
+  font-size: 11px;
+}
+
+.progress-label strong {
+  color: var(--primary);
+
+  font-size: 12px;
+}
+
+.progress-bar {
+  width: 100%;
+
+  height: 8px;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background: #e6e9ed;
+}
+
+.progress-fill {
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--primary),
+      var(--primary-light)
+    );
+
+  transition: width 0.25s ease;
+}
+
+/* =========================================================
+   CERTIFICATE MANAGEMENT
+   ========================================================= */
+
+.certificate-management-header {
+  align-items: flex-end;
+}
+
+.certificate-management-header > div:first-child {
+  flex: 1;
+}
+
+.search-box {
+  width: 300px;
+
+  flex-shrink: 0;
+}
+
+.search-box input {
+  width: 100%;
+
+  height: 42px;
+
+  padding: 10px 14px;
+
+  color: var(--text);
+
+  background: #ffffff;
+
+  border: 1px solid var(--border-dark);
+
+  border-radius: 10px;
+
+  outline: none;
+
+  font-size: 12px;
+
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition);
+}
+
+.search-box input::placeholder {
+  color: #9ca3aa;
+
+  opacity: 1;
+}
+
+.search-box input:focus {
+  border-color: var(--primary);
+
+  box-shadow:
+    0 0 0 4px rgba(107, 23, 52, 0.08);
+}
+
+/* =========================================================
+   CERTIFICATE TABLE
+   ========================================================= */
+
+.certificate-table {
+  min-width: 900px;
+}
+
+.certificate-table td {
+  vertical-align: middle;
+}
+
+.certificate-table td strong {
+  color: var(--text);
+
+  font-weight: 700;
+}
+
+.certificate-id {
+  display: inline-block;
+
+  color: var(--primary);
+
+  font-family:
+    "SFMono-Regular",
+    Consolas,
+    "Liberation Mono",
+    monospace;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   ACTION BUTTONS
+   ========================================================= */
+
+.table-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+}
+
+.action-button {
+  min-height: 31px;
+
+  padding: 7px 10px;
+
+  border-radius: 8px;
+
+  background: #f1f3f5;
+
+  color: #4d555d;
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.action-button:hover {
+  background: #e6e9ec;
+
+  transform: translateY(-1px);
+}
+
+.action-button.danger {
+  background: var(--danger-bg);
+
+  color: var(--danger);
+}
+
+.action-button.danger:hover {
+  background: #f4dce4;
+}
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.empty-state {
+  width: 100%;
+
+  padding: 65px 30px;
+
+  text-align: center;
+
+  background: #fafbfc;
+
+  border: 1px dashed #d9dee4;
+
+  border-radius: 14px;
+}
+
+.empty-state h3 {
+  margin: 0;
+
+  color: var(--text);
+
+  font-size: 16px;
+  font-weight: 750;
+}
+
+.empty-state p {
+  max-width: 500px;
+
+  margin: 8px auto 0;
+
+  color: var(--text-muted);
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 1000;
+
+  padding: 20px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background:
+    rgba(20, 23, 27, 0.62);
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.credentials-modal {
+  width: min(540px, 100%);
+
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  padding: 28px;
+
+  background: #ffffff;
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.25);
+
+  animation: modalIn 0.2s ease;
+}
+
+@keyframes modalIn {
+  from {
+    opacity: 0;
+
+    transform: translateY(10px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal-header {
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 22px;
+}
+
+.modal-header h2 {
+  margin: 0;
+
+  color: var(--text);
+
+  font-size: 21px;
+  font-weight: 750;
+}
+
+.modal-close {
+  width: 34px;
+  height: 34px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: #f1f3f5;
+
+  color: #555d65;
+
+  font-size: 20px;
+
+  line-height: 1;
+}
+
+.modal-close:hover {
+  background: #e7eaed;
+
+  transform: rotate(3deg);
+}
+
+/* =========================================================
+   CREDENTIAL DETAILS
+   ========================================================= */
+
+.credential-details {
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid var(--border);
+
+  border-radius: 13px;
+}
+
+.credential-row {
+  min-height: 52px;
+
+  padding: 13px 15px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 25px;
+
+  border-bottom: 1px solid #edf0f2;
+}
+
+.credential-row:last-child {
+  border-bottom: 0;
+}
+
+.credential-row span {
+  color: var(--text-muted);
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.credential-row strong {
+  max-width: 65%;
+
+  color: var(--text);
+
+  font-size: 12px;
+  font-weight: 700;
+
+  text-align: right;
+
+  overflow-wrap: anywhere;
+}
+
+/* =========================================================
+   PASSWORD
+   ========================================================= */
+
+.credential-password {
+  margin: 16px;
+
+  padding: 16px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #faf7f8,
+      #f8f9fa
+    );
+
+  border: 1px solid #eadde2;
+
+  border-radius: 12px;
+}
+
+.credential-password > span {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: var(--text-secondary);
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.password-field {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+.password-field input {
+  min-width: 0;
+  flex: 1;
+
+  height: 40px;
+
+  padding: 9px 12px;
+
+  background: #ffffff;
+
+  border: 1px solid var(--border-dark);
+
+  border-radius: 9px;
+
+  color: var(--text);
+
+  font-family:
+    "SFMono-Regular",
+    Consolas,
+    monospace;
+
+  font-size: 14px;
+
+  letter-spacing: 1px;
+
+  outline: none;
+}
+
+.password-field button {
+  height: 40px;
+
+  padding: 0 13px;
+
+  flex-shrink: 0;
+
+  border: 0;
+
+  border-radius: 9px;
+
+  background: var(--primary);
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.password-field button:hover {
+  background: var(--primary-dark);
+}
+
+/* =========================================================
+   MODAL WARNING
+   ========================================================= */
+
+.modal-warning {
+  margin-top: 15px;
+
+  padding: 13px 15px;
+
+  background: var(--warning-bg);
+
+  border: 1px solid #f0dfad;
+
+  border-radius: 10px;
+
+  color: var(--warning);
+
+  font-size: 11px;
+
+  line-height: 1.55;
+}
+
+/* =========================================================
+   MODAL ACTIONS
+   ========================================================= */
+
+.modal-actions {
+  margin-top: 20px;
+
+  display: flex;
+
+  justify-content: flex-end;
+}
+
+.modal-actions .secondary-button {
+  margin: 0;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.institution-footer {
+  width: min(1400px, calc(100% - 64px));
+
+  margin: 0 auto;
+
+  padding: 25px 0 35px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  border-top: 1px solid var(--border);
+
+  color: var(--text-muted);
+
+  font-size: 11px;
+}
+
+.institution-footer > div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.institution-footer strong {
+  color: var(--primary);
+
+  font-size: 13px;
+}
+
+.institution-footer span {
+  color: var(--text-muted);
+
+  line-height: 1.4;
+}
+
+/* =========================================================
+   RESPONSIVE — TABLETS
+   ========================================================= */
+
+@media (max-width: 1000px) {
+  .institution-header-inner,
+  .institution-main,
+  .institution-footer {
+    width: min(100% - 40px, 1400px);
+  }
+
+  .certificate-form {
+    grid-template-columns: 1fr;
+  }
+
+  .certificate-form .form-group:last-child {
+    grid-column: auto;
+
+    max-width: none;
+  }
+
+  .overview-grid {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+  .certificate-management-header {
+    align-items: flex-start;
+  }
+
+  .search-box {
+    width: 260px;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .institution-header-inner {
+    width: calc(100% - 30px);
+
+    min-height: 72px;
+
+    gap: 15px;
+  }
+
+  .institution-logo-wrapper {
+    width: 45px;
+    height: 45px;
+  }
+
+  .platform-name {
+    font-size: 17px;
+  }
+
+  .portal-name {
+    font-size: 10px;
+  }
+
+  .institution-info {
+    display: none;
+  }
+
+  .institution-main {
+    width: calc(100% - 30px);
+
+    padding-top: 25px;
+  }
+
+  .portal-intro {
+    padding: 28px 24px;
+
+    border-radius: 18px;
+  }
+
+  .portal-intro h1 {
+    font-size: 30px;
+
+    letter-spacing: -0.7px;
+  }
+
+  .portal-intro p {
+    font-size: 13px;
+  }
+
+  .overview-grid {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+  .overview-item {
+    min-height: 100px;
+
+    padding: 20px;
+  }
+
+  .overview-item strong {
+    font-size: 28px;
+  }
+
+  .portal-card {
+    padding: 22px 18px;
+
+    border-radius: 17px;
+  }
+
+  .card-header {
+    flex-direction: column;
+
+    gap: 15px;
+
+    margin-bottom: 22px;
+  }
+
+  .card-header .secondary-button {
+    width: 100%;
+  }
+
+  .certificate-form {
+    gap: 15px;
+  }
+
+  .form-actions {
+    margin-top: 18px;
+  }
+
+  .form-actions .primary-button {
+    width: 100%;
+  }
+
+  .csv-upload-area {
+    min-height: 175px;
+
+    padding: 22px 15px;
+  }
+
+  .csv-file-info {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+  .csv-file-info .text-button {
+    padding-left: 0;
+  }
+
+  .preview-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 8px;
+  }
+
+  .bulk-actions .primary-button {
+    width: 100%;
+  }
+
+  .certificate-management-header {
+    align-items: stretch;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+
+  .certificate-table-wrapper {
+    margin-left: -2px;
+
+    width: calc(100% + 4px);
+  }
+
+  .table-actions {
+    flex-wrap: wrap;
+  }
+
+  .institution-footer {
+    width: calc(100% - 30px);
+
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    padding-bottom: 25px;
+  }
+
+  .credentials-modal {
+    padding: 22px;
+
+    border-radius: 17px;
+  }
+
+  .credential-row {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 5px;
+  }
+
+  .credential-row strong {
+    max-width: 100%;
+
+    text-align: left;
+  }
+
+  .password-field {
+    align-items: stretch;
+
+    flex-direction: column;
+  }
+
+  .password-field button {
+    width: 100%;
+  }
+
+  .modal-actions .secondary-button {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   VERY SMALL SCREENS
+   ========================================================= */
+
+@media (max-width: 420px) {
+  .portal-intro h1 {
+    font-size: 26px;
+  }
+
+  .portal-card {
+    padding: 20px 15px;
+  }
+
+  .overview-item {
+    padding: 18px;
+  }
+
+  .primary-button {
+    font-size: 11px;
+  }
+}
