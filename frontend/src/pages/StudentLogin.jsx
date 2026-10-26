@@ -230,33 +230,49 @@ function StudentLogin() {
                 HEADER
             ========================================= */}
 
-            <header className="student-login-header">
+            
+<header className="student-login-header">
+    <div className="student-login-header-inner">
 
-                <div className="student-login-header-inner">
+        <div
+            className="student-login-brand"
+            onClick={() => navigate("/")}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                    navigate("/");
+                }
+            }}
+            style={{ cursor: "pointer" }}
+        >
+            <div className="student-login-logo">
+                ✓
+            </div>
 
-                    <div className="student-login-brand">
-
-                        <div className="student-login-logo">
-                            ✓
-                        </div>
-
-                        <div>
-
-                            <div className="student-login-platform">
-                                verify.edu.pg
-                            </div>
-
-                            <div className="student-login-tagline">
-                                Academic Certificate Verification
-                            </div>
-
-                        </div>
-
-                    </div>
-
+            <div>
+                <div className="student-login-platform">
+                    verify.edu.pg
                 </div>
 
-            </header>
+                <div className="student-login-tagline">
+                    Academic Certificate Verification
+                </div>
+            </div>
+        </div>
+
+        <button
+            type="button"
+            className="student-home-button"
+            onClick={() => navigate("/")}
+        >
+            <span aria-hidden="true">←</span>
+            Home
+        </button>
+
+    </div>
+</header>
+
 
 
             {/* =========================================

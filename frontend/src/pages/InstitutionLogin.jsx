@@ -6,13 +6,12 @@ import { useNavigate } from "react-router-dom";
 function InstitutionLogin() {
     const navigate = useNavigate();
 
-    const [institutionID, setInstitutionID] = useState("");
-    const [password, setPassword] = useState("");
-    const [showPassword, setShowPassword] = useState(false);
     const [loading, setLoading] = useState(false);
     const [walletConnected, setWalletConnected] = useState(false);
     const [walletAddress, setWalletAddress] = useState("");
     const [error, setError] = useState("");
+
+    const institutionName = "PNG University of Technology";
 
     function shortenAddress(address) {
         if (!address) return "";
@@ -24,12 +23,14 @@ function InstitutionLogin() {
 
         try {
             if (!window.ethereum) {
-                setError("MetaMask is required for institution authentication.");
+                setError(
+                    "MetaMask is required for institution authentication."
+                );
                 return;
             }
 
             const accounts = await window.ethereum.request({
-                method: "eth_requestAccounts"
+                method: "eth_requestAccounts",
             });
 
             if (!accounts || accounts.length === 0) {
@@ -39,7 +40,6 @@ function InstitutionLogin() {
 
             setWalletAddress(accounts[0]);
             setWalletConnected(true);
-
         } catch (err) {
             console.error("Wallet connection error:", err);
 
@@ -55,51 +55,54 @@ function InstitutionLogin() {
         event.preventDefault();
         setError("");
 
-        if (!institutionID.trim()) {
-            setError("Please enter your Institution ID.");
-            return;
-        }
-
-        if (!password.trim()) {
-            setError("Please enter your password.");
-            return;
-        }
-
-        if (!walletConnected) {
-            setError("Please connect your authorized institution wallet.");
+        if (!walletConnected || !walletAddress) {
+            setError(
+                "Please connect your authorized institution wallet first."
+            );
             return;
         }
 
         /*
-         * Blockchain authentication will be connected here.
+         * PHASE 10:
+         * UI flow only.
          *
-         * The next stage will:
+         * FUNCTIONALITY PHASE:
          *
-         * 1. Connect to your CertificateVerification contract.
+         * 1. Connect to CertificateVerification contract.
          * 2. Read universityAdmin().
-         * 3. Compare it with the connected MetaMask address.
-         * 4. Only allow authorized institution wallets to continue.
+         * 3. Compare universityAdmin with walletAddress.
+         * 4. Reject unauthorized wallets.
+         * 5. Allow the authorized institution to continue.
          */
 
         try {
             setLoading(true);
 
-            /*
-             * Temporary UI-only delay.
-             * This will be replaced with the real blockchain
-             * authentication in the next step.
-             */
-            await new Promise((resolve) => setTimeout(resolve, 1000));
+            // Temporary UI-only authentication delay.
+            await new Promise((resolve) => setTimeout(resolve, 700));
 
-            sessionStorage.setItem("institutionLoggedIn", "true");
-            sessionStorage.setItem("institutionID", institutionID.trim());
-            sessionStorage.setItem("institutionWallet", walletAddress);
+            sessionStorage.setItem(
+                "institutionLoggedIn",
+                "true"
+            );
+
+            sessionStorage.setItem(
+                "institutionWallet",
+                walletAddress
+            );
+
+            sessionStorage.setItem(
+                "institutionName",
+                institutionName
+            );
 
             navigate("/institution");
-
         } catch (err) {
             console.error("Institution login error:", err);
-            setError("Unable to authenticate institution.");
+
+            setError(
+                "Unable to authenticate the institution wallet."
+            );
         } finally {
             setLoading(false);
         }
@@ -247,7 +250,7 @@ function InstitutionLogin() {
                     </section>
 
 
-                    {/* LOGIN CARD */}
+                    {/* AUTHENTICATION CARD */}
                     <section className="institution-login-card">
 
                         <div className="institution-card-top">
@@ -258,11 +261,12 @@ function InstitutionLogin() {
 
                             <div>
                                 <h2>
-                                    Institution Login
+                                    Institution Access
                                 </h2>
 
                                 <p>
-                                    Sign in to access your institution portal.
+                                    Connect your authorized institutional
+                                    wallet to continue.
                                 </p>
                             </div>
 
@@ -274,84 +278,22 @@ function InstitutionLogin() {
                             onSubmit={handleSubmit}
                         >
 
-                            {/* INSTITUTION ID */}
-                            <div className="institution-form-group">
+                            {/* AUTHENTICATION INTRO */}
+                            <div className="wallet-auth-intro">
 
-                                <label htmlFor="institutionID">
-                                    Institution ID
-                                </label>
+                                <span className="wallet-label">
+                                    BLOCKCHAIN AUTHENTICATION
+                                </span>
 
-                                <div className="institution-input-wrapper">
+                                <h3>
+                                    Authorized Institution Wallet
+                                </h3>
 
-                                    <span className="institution-input-icon">
-                                        #
-                                    </span>
-
-                                    <input
-                                        id="institutionID"
-                                        type="text"
-                                        value={institutionID}
-                                        onChange={(e) =>
-                                            setInstitutionID(e.target.value)
-                                        }
-                                        placeholder="e.g. PNGUOT-ADMIN"
-                                        autoComplete="username"
-                                        disabled={loading}
-                                    />
-
-                                </div>
-
-                                <small>
-                                    Enter the institution identifier provided
-                                    by verify.edu.pg.
-                                </small>
-
-                            </div>
-
-
-                            {/* PASSWORD */}
-                            <div className="institution-form-group">
-
-                                <label htmlFor="institutionPassword">
-                                    Password
-                                </label>
-
-                                <div className="institution-input-wrapper">
-
-                                    <span className="institution-input-icon">
-                                        •
-                                    </span>
-
-                                    <input
-                                        id="institutionPassword"
-                                        type={
-                                            showPassword
-                                                ? "text"
-                                                : "password"
-                                        }
-                                        value={password}
-                                        onChange={(e) =>
-                                            setPassword(e.target.value)
-                                        }
-                                        placeholder="Enter your password"
-                                        autoComplete="current-password"
-                                        disabled={loading}
-                                    />
-
-                                    <button
-                                        type="button"
-                                        className="institution-password-toggle"
-                                        onClick={() =>
-                                            setShowPassword(!showPassword)
-                                        }
-                                        disabled={loading}
-                                    >
-                                        {showPassword
-                                            ? "Hide"
-                                            : "Show"}
-                                    </button>
-
-                                </div>
+                                <p>
+                                    Your connected wallet identifies the
+                                    institution authorized to manage academic
+                                    certificates on verify.edu.pg.
+                                </p>
 
                             </div>
 
@@ -363,11 +305,11 @@ function InstitutionLogin() {
 
                                     <div>
                                         <span className="wallet-label">
-                                            AUTHORIZED WALLET
+                                            INSTITUTION WALLET
                                         </span>
 
                                         <h3>
-                                            Blockchain Authentication
+                                            MetaMask
                                         </h3>
                                     </div>
 
@@ -447,13 +389,45 @@ function InstitutionLogin() {
 
                                 )}
 
+
                                 <p className="wallet-help">
-                                    Your wallet will be checked against the
-                                    institution address registered on the
-                                    blockchain.
+                                    During final integration, this wallet will
+                                    be checked against the authorized
+                                    institution address registered in the
+                                    blockchain contract.
                                 </p>
 
                             </div>
+
+
+                            {/* INSTITUTION PREVIEW */}
+                            {walletConnected && (
+                                <div className="institution-wallet-preview">
+
+                                    <div className="institution-wallet-check">
+                                        ✓
+                                    </div>
+
+                                    <div>
+                                        <span>
+                                            INSTITUTION
+                                        </span>
+
+                                        <br></br>
+
+                                        <strong>
+                                            {institutionName}
+                                        </strong>
+                                        
+                                        <br></br>
+
+                                        <small>
+                                            {shortenAddress(walletAddress)}
+                                        </small>
+                                    </div>
+
+                                </div>
+                            )}
 
 
                             {/* ERROR */}
@@ -472,18 +446,22 @@ function InstitutionLogin() {
                             )}
 
 
-                            {/* LOGIN BUTTON */}
+                            {/* ENTER PORTAL */}
                             <button
                                 type="submit"
                                 className="institution-login-button"
-                                disabled={loading}
+                                disabled={
+                                    loading ||
+                                    !walletConnected
+                                }
                             >
 
                                 {loading ? (
                                     <>
-                                        <span className="institution-spinner"></span>
+                                        <span className="institution-spinner">
+                                        </span>
 
-                                        Authenticating institution...
+                                        Authenticating wallet...
                                     </>
                                 ) : (
                                     <>
@@ -508,9 +486,8 @@ function InstitutionLogin() {
                             </span>
 
                             <p>
-                                Institutional credentials and wallet
-                                authentication are used to protect access
-                                to certificate management.
+                                Institution access is protected using
+                                blockchain wallet authentication.
                             </p>
 
                         </div>
